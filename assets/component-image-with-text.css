@@ -1,0 +1,55 @@
+p,h2 {
+margin: 0;
+}
+
+.container {
+  padding: 170px 75px;
+  width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.background {
+  width:  400px;
+  height: 400px;
+}
+.content-wraper {
+  width: 570px;
+}
+.my-book-section {
+  display: flex;
+  justify-content:space-between;
+  font-family: sans-serif;
+}
+.image-second  {
+  
+  flex-direction: row-reverse;
+}
+.section-title {
+  display: block;
+font-size: 50px;
+margin-bottom: 30px;
+
+}
+.section-paragraph  {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 20px;
+  
+}
+.bold-text  {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.learn-more-btn {
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #5491D6;
+  padding: 16px 32px;
+  color: #ffff;
+  border: 0px;
+  box-shadow: darkgray;
+}

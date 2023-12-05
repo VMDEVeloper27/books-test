@@ -1,0 +1,65 @@
+{{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
+<div class="container">
+    <div class="my-book-section  {% if section.settings.layout != "text_first" %}image-second {%else %}{% endif %} ">
+        <div class="content-wraper">
+            <h2 class="section-title">{{section.settings.heading }}</h2>
+            <p class="section-paragraph">{{section.settings.text }}</p>
+            <p class="bold-text">{{section.settings.text-bold}}</p>
+            <button class="learn-more-btn">Learn more</button>  
+        </div>
+        <div  class="section-content background"
+              style="background-image: url({{section.settings.image | image_url}}); background-size:contain; background-repeat: no-repeat;" >
+        </div> 
+    </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.image-with-text.name",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "t:sections.image-with-text.settings.layout.options__1.label"
+        },
+        {
+          "value": "text_first",
+          "label": "t:sections.image-with-text.settings.layout.options__2.label"
+        }
+      ],
+      "default": "image_first",
+      "label": "t:sections.image-with-text.settings.layout.label",
+      "info": "t:sections.image-with-text.settings.layout.info"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Image with text",
+      "label": "t:sections.image-with-text.blocks.heading.settings.heading.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "default": "Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.",
+      "label": "t:sections.image-with-text.blocks.text.settings.text.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text-bold",
+      "default": "this is second paragraph",
+      "label": "t:sections.image-with-text.blocks.text.settings.text.label"
+    }
+  ]
+}
+{% endschema %}
